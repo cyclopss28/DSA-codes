@@ -60,12 +60,22 @@ void levelOrderTraversal(Node* root){
     }
 }
 
+void inOrder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    inOrder(root->left);
+    cout<< root->data<<" ";
+    inOrder(root->right);
+}
+
 int main(){
 
     Node* root = NULL;
     root = buildTree(root);
     //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     levelOrderTraversal(root);
+    inOrder(root);
 
     return 0;
 }
